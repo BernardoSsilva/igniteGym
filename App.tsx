@@ -1,21 +1,16 @@
+import { LoadingIndicator } from "@components/loading";
 import { Roboto_400Regular, Roboto_700Bold } from "@expo-google-fonts/roboto";
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
+import { NativeBaseProvider } from "native-base";
 import { Text, View } from "react-native";
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
   return (
-    <View>
-      {/* {fontsLoaded ? <Text>"Aoba"</Text> : <Text>Carregando</Text>} */}
-
-      <Text>Hello world</Text>
-
-      <StatusBar
-       
-        backgroundColor="transparent"
-        translucent
-      />
-    </View>
+    <NativeBaseProvider>
+      <StatusBar style="light" backgroundColor="transparent" translucent />
+      {fontsLoaded ? <Text>"Aoba"</Text> : <LoadingIndicator />}
+    </NativeBaseProvider>
   );
 }
