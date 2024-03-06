@@ -3,11 +3,12 @@ import LogoSvg from "@assets/logo.svg";
 import { Button } from "@components/button/button";
 import { Input } from "@components/input/input";
 import { useNavigation } from "@react-navigation/native";
+import { AuthNavigatorRoutesProps } from "@routes/auth.routes";
 import { Center, Heading, Image, ScrollView, Text, VStack } from "native-base";
 
 export function SignIn() {
 
-  const navigation= useNavigation();
+  const navigation= useNavigation<AuthNavigatorRoutesProps>();
     function navigateToSignUp(){
         navigation.navigate("signUp")
     }

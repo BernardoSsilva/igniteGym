@@ -1,7 +1,6 @@
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
+import { Box, useTheme } from "native-base";
 import { AuthRoutes } from "./auth.routes";
-import { Box, View, useTheme } from "native-base";
-import { background } from "native-base/lib/typescript/theme/styled-system";
 
 export function Router() {
   const { colors } = useTheme();
@@ -9,7 +8,7 @@ export function Router() {
   theme.colors.background = colors.gray[800];
   return (
     <Box flex={1} bg={"gray.800"}>
-      <NavigationContainer>
+      <NavigationContainer theme={theme}>
         <AuthRoutes />
       </NavigationContainer>
     </Box>
