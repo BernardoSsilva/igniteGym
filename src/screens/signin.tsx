@@ -2,9 +2,16 @@ import BackgroundImage from "@assets/background.png";
 import LogoSvg from "@assets/logo.svg";
 import { Button } from "@components/button/button";
 import { Input } from "@components/input/input";
+import { useNavigation } from "@react-navigation/native";
 import { Center, Heading, Image, ScrollView, Text, VStack } from "native-base";
 
 export function SignIn() {
+
+  const navigation= useNavigation();
+    function navigateToSignUp(){
+        navigation.navigate("signUp")
+    }
+    
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
       <VStack flex={1} bg={"gray.800"} px={10}>
@@ -45,7 +52,7 @@ export function SignIn() {
               Ainda não tem acesso?
             </Text>
 
-            <Button title="Criar conta" variant={"outline"} />
+            <Button onPress={navigateToSignUp} title="Criar conta" variant={"outline"} />
           </Center>
         </Center>
       </VStack>

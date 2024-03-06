@@ -3,7 +3,12 @@ import BackgroundImage from "@assets/background.png";
 import LogoSvg from "@assets/logo.svg";
 import { Input } from "@components/input/input";
 import { Button } from "@components/button/button";
+import { useNavigation } from "@react-navigation/native";
 export function SignUp() {
+    const navigation= useNavigation();
+    function navigateToSignIn(){
+        navigation.navigate("signIn")
+    }
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
       <VStack px={10} flex={1} bg={"gray.800"}>
@@ -33,7 +38,7 @@ export function SignUp() {
           <Input placeholder="Senha" secureTextEntry />
           <Input placeholder="Confirme a Senha" secureTextEntry />
           <Button title="Criar e acessar" />
-          <Button mt={10} variant="outline" title="Retornar ao login" />
+          <Button onPress={navigateToSignIn} mt={10} variant="outline" title="Retornar ao login" />
         </Center>
       </VStack>
     </ScrollView>
