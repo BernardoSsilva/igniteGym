@@ -7,7 +7,7 @@ import { Center, Heading, Image, ScrollView, Text, VStack } from "native-base";
 export function SignIn() {
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-      <VStack flex={1} bg={"gray.700"} px={10}>
+      <VStack flex={1} bg={"gray.800"} px={10}>
         <Image
           source={BackgroundImage}
           alt="Pessoas treinando"

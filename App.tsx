@@ -6,6 +6,7 @@ import { NativeBaseProvider, useTheme } from "native-base";
 import { Text, View } from "react-native";
 import { THEME } from "./src/theme";
 import { SignIn } from "@screens/signin";
+import { SignUp } from "@screens/signup";
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
@@ -16,7 +17,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <SignIn /> : <LoadingIndicator />}
+      {fontsLoaded ? <SignUp /> : <LoadingIndicator />}
     </NativeBaseProvider>
   );
 }

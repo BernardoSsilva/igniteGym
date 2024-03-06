@@ -24,7 +24,7 @@ export function Button({ title, variant, ...rest }: Props) {
       {...rest}
     >
       <Center>
-        <Text color={variant === "outline" ? "green.500" : "white"}>
+        <Text fontFamily="heading" bold fontSize={"md"} color={variant === "outline" ? "green.500" : "white"}>
           {title}
         </Text>
       </Center>
