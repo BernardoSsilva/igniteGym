@@ -32,8 +32,8 @@ export function SignUp() {
           <Input placeholder="E-mail" keyboardType="email-address" />
           <Input placeholder="Senha" secureTextEntry />
           <Input placeholder="Confirme a Senha" secureTextEntry />
-          <Button title="Criar conta"/>
-            <Button mt={10} variant="outline" title="Retornar ao login"/>
+          <Button title="Criar e acessar" />
+          <Button mt={10} variant="outline" title="Retornar ao login" />
         </Center>
       </VStack>
     </ScrollView>
