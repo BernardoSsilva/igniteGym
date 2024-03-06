@@ -1,5 +1,6 @@
 import { LoadingIndicator } from "@components/loading/loading";
 import { Roboto_400Regular, Roboto_700Bold } from "@expo-google-fonts/roboto";
+import { SignIn } from "@screens/signin";
 import { SignUp } from "@screens/signup";
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
@@ -10,7 +11,7 @@ export default function App() {
   return (
     <NativeBaseProvider>
       <StatusBar style="light" backgroundColor="transparent" translucent />
-      {fontsLoaded ? <SignUp /> : <LoadingIndicator />}
+      {fontsLoaded ? <SignIn /> : <LoadingIndicator />}
     </NativeBaseProvider>
   );
 }

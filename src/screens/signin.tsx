@@ -27,7 +27,7 @@ export function SignIn() {
             fontSize={"sm"}
             mb={6}
             fontFamily={"heading"}
-            color={"green.100"}
+           
           >
             Acesse sua conta
           </Heading>
