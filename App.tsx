@@ -12,7 +12,7 @@ export default function App() {
   return (
     <NativeBaseProvider>
       <StatusBar
-        barStyle="light-content"
+    
         backgroundColor="transparent"
         translucent
       />
