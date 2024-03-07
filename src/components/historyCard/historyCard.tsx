@@ -8,7 +8,7 @@ type Props = {
 
 export function HistoryCard({ title, text, hour }: Props) {
   return (
-    <HStack justifyContent={"space-between"} bg={"gray.700"} padding={5} borderRadius={10} >
+    <HStack justifyContent={"space-between"} bg={"gray.700"} padding={5} borderRadius={10} mb={3} >
       <VStack>
         <Heading color={"white"} fontSize={"xl"} fontWeight={"bold"} textTransform={"capitalize"}>{title}</Heading>
         <Text numberOfLines={1} color={"gray.200"}>{text}</Text>
