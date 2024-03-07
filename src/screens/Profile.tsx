@@ -1,7 +1,7 @@
 import { Button } from "@components/button/button";
 import { DefaultHeader } from "@components/defaultHeader/defaultHeader";
 import { Input } from "@components/input/input";
-import { UserImage } from "@components/userImage/userImage";
+import { UserPhoto } from "@components/userPhoto/userPhoto";
 import {
   Center,
   Heading,
@@ -29,7 +29,10 @@ export function Profile() {
               endColor={"gray.700"}
             />
           ) : (
-            <UserImage imageSource="https://github.com/BernardoSsilva.png" />
+            <UserPhoto
+              size={48}
+              source={{ uri: "https://github.com/BernardoSsilva.png" }}
+            />
           )}
           <TouchableOpacity>
             <Text
@@ -43,13 +46,16 @@ export function Profile() {
             </Text>
           </TouchableOpacity>
           <Input placeholder="Nome" />
-          <Input placeholder="Email" isDisabled />
+          <Input value="Email" isDisabled />
         </Center>
-        <Heading mt={20} mb={5} color={"gray.100"}>Alterar senha</Heading >
+        <Heading mt={12} mb={9} color={"gray.100"}>
+          Alterar senha
+        </Heading>
         <Center marginBottom={20}>
-            <Input placeholder="Senha antiga"/>
-            <Input placeholder="Nova senha"/>
-            <Button title="Atualizar"/>
+          <Input placeholder="Senha antiga" />
+          <Input placeholder="Nova senha" secureTextEntry />
+          <Input placeholder="Confirmar nova senha" secureTextEntry />
+          <Button title="Atualizar" />
         </Center>
       </ScrollView>
     </VStack>
