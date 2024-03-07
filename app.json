@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "igniteGym",
-    "slug": "igniteGym",
+    "slug": "ignitegym",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,13 +21,20 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.bernardo.santos.ignitegym"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "95dcc7c7-6a7f-4a26-b652-28dd1c7d11c7"
+      }
+    },
+    "owner": "bernardo.santos"
   }
 }
