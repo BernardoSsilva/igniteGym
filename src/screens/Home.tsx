@@ -1,6 +1,8 @@
 import { ExerciseCard } from "@components/exerciseCard/exerciseCard";
 import { FilterGroup } from "@components/filterGroup/filterGroup";
 import { HomeHeader } from "@components/homeHeader/homeHeader";
+import { useNavigation } from "@react-navigation/native";
+import { appRoutesProps } from "@routes/app.routes";
 import { FlatList, HStack, Heading, Text, VStack } from "native-base";
 import { useEffect, useState } from "react";
 
@@ -53,10 +55,11 @@ export function Home() {
   ]);
   const [selectedGroup, setSelectedGroup] = useState("");
 
-  useEffect(() => {
-    console.log(selectedGroup);
-  }, [selectedGroup]);
+  const navigation = useNavigation<appRoutesProps>();
 
+  function handleOpenExerciseDetails() {
+    navigation.navigate("exercise");
+  }
   return (
     <VStack flex={1}>
       <HomeHeader />
@@ -97,6 +100,7 @@ export function Home() {
                 name={item.name}
                 image={item.imageUrl}
                 info={item.info}
+                onPress={handleOpenExerciseDetails}
               />
             );
           }}
