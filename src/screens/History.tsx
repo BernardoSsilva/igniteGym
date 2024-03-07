@@ -1,9 +1,10 @@
-import { Center, Text } from "native-base";
+import { DefaultHeader } from "@components/defaultHeader/defaultHeader";
+import { Center, Text, VStack } from "native-base";
 
 export function History() {
   return (
-    <Center flex={1}>
-      <Text>History</Text>
-    </Center>
+    <VStack flex={1}>
+      <DefaultHeader text="Histórico de Exercícios" />
+    </VStack>
   );
 }

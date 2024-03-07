@@ -20,7 +20,13 @@ export function ExerciseCard({ name, image, info, ...rest }: Props) {
         padding={2}
         marginBottom={5}
       >
-        <Image source={PuxadaFrontal} borderRadius={5} />
+        <Image
+          source={{ uri: image }}
+          w={16}
+          h={16}
+          alt="imagem de exercicio"
+          borderRadius={5}
+        />
         <VStack flex={1} marginLeft={4}>
           <Heading color={"white"}>{name}</Heading>
           <Text color={"gray.400"}>{info}</Text>
