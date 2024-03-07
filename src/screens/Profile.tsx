@@ -43,7 +43,7 @@ export function Profile() {
             </Text>
           </TouchableOpacity>
           <Input placeholder="Nome" />
-          <Input placeholder="Email" />
+          <Input placeholder="Email" isDisabled />
         </Center>
         <Heading mt={20} mb={5} color={"gray.100"}>Alterar senha</Heading >
         <Center marginBottom={20}>
