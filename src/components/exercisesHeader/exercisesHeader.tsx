@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { HStack, Heading, Text, VStack } from "native-base";
 import { ArrowLeft, Person } from "phosphor-react-native";
 import { TouchableOpacity } from "react-native";
@@ -7,6 +8,7 @@ type Props = {
   type: string;
 };
 export function ExercisesHeader({ text, type }: Props) {
+  const navigation = useNavigation();
   return (
     <HStack
       justifyContent={"space-between"}
@@ -17,7 +19,7 @@ export function ExercisesHeader({ text, type }: Props) {
       padding={10}
     >
       <VStack>
-        <TouchableOpacity >
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <ArrowLeft size={32} color="#00B37E" />
         </TouchableOpacity>
         <Heading mt={4} color={"gray.100"} fontSize={"xl"}>
