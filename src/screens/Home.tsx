@@ -1,9 +1,17 @@
+import { ExerciseCard } from "@components/exerciseCard/exerciseCard";
 import { FilterGroup } from "@components/filterGroup/filterGroup";
 import { HomeHeader } from "@components/homeHeader/homeHeader";
 import { FlatList, HStack, Heading, Text, VStack } from "native-base";
 import { useEffect, useState } from "react";
 
 export function Home() {
+  const [exercises, setExercises] = useState([
+    { name: "Puxada frontal", info: "3 séries x 12 repetições" },
+    { name: "Remada curvada", info: "3 séries x 12 repetições" },
+    { name: "Remada unilateral", info: "3 séries x 12 repetições" },
+    { name: "Levantamento terra", info: "3 séries x 12 repetições" },
+  ]);
+
   const [groups, setGroups] = useState([
     "costa",
     "peito",
@@ -48,6 +56,15 @@ export function Home() {
             4
           </Text>
         </HStack>
+
+        <FlatList
+          data={exercises}
+          renderItem={({ item }) => {
+            return (
+              <ExerciseCard name={item.name} image={""} info={item.info} />
+            );
+          }}
+        />
       </VStack>
     </VStack>
   );
