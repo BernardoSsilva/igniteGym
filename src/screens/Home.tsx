@@ -1,9 +1,10 @@
-import { Center, Text } from "native-base";
+import { HomeHeader } from "@components/homeHeader/homeHeader";
+import { Center, Text, VStack } from "native-base";
 
-export function Home(){
-    return(
-        <Center flex={1}>
-            <Text>Home</Text>
-        </Center>
-    )
+export function Home() {
+  return (
+    <VStack flex={1} >
+      <HomeHeader />
+    </VStack>
+  );
 }
