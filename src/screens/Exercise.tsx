@@ -8,16 +8,15 @@ export function Exercise() {
   return (
     <VStack flex={1}>
       <ExercisesHeader text={"Puxada frontal"} type={"Costas"} />
-      <ScrollView>
-        <Center flex={1} alignItems="center" justifyContent={"top"} px={20}>
-          <ExerciseImage
-            imageUri={
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS55IEkn5f8Ud6SH_8GOMy0JPj43QiMXLPzJTmNf7O2Ow&s"
-            }
-          />
-          <ExerciseInfoCard series={"3 Series"} repeats={"20 Repetições"} />
-        </Center>
-      </ScrollView>
+
+      <Center flex={1} alignItems="center" justifyContent={"top"} px={20}>
+        <ExerciseImage
+          imageUri={
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS55IEkn5f8Ud6SH_8GOMy0JPj43QiMXLPzJTmNf7O2Ow&s"
+          }
+        />
+        <ExerciseInfoCard series={"3 Series"} repeats={"20 Repetições"} />
+      </Center>
     </VStack>
   );
 }

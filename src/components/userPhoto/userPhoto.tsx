@@ -3,9 +3,10 @@ import { ImageProps } from "react-native-svg";
 
 type Props = ImageProps & {
   size: number;
+  userPhotoUri:string
 };
 
-export function UserPhoto({ size, ...rest }: Props) {
+export function UserPhoto({ size,userPhotoUri,  ...rest }: Props) {
   return (
     <Image
       alt="user photo"
@@ -14,6 +15,7 @@ export function UserPhoto({ size, ...rest }: Props) {
       borderRadius={"full"}
       borderWidth={2}
       borderColor={"gray.200"}
+      source={{ uri: userPhotoUri}}
       {...rest}
     />
   );

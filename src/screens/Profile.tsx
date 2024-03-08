@@ -9,12 +9,58 @@ import {
   Skeleton,
   Text,
   VStack,
+  useToast,
 } from "native-base";
 import { useState } from "react";
-import { TouchableOpacity } from "react-native";
+import { Alert, TouchableOpacity } from "react-native";
+
+import * as ImagePicker from "expo-image-picker";
+import * as FileSystem from "expo-file-system";
 
 export function Profile() {
+  const [userPhoto, setUserPhoto] = useState(
+    "https://github.com/BernardoSsilva.png"
+  );
+  const toast = useToast();
   const [photoIsLoading, setPhotoIsLoading] = useState(false);
+
+  async function handleUserPhotoSelect() {
+    setPhotoIsLoading(true);
+    try {
+      const selectedPhoto = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        quality: 1,
+        aspect: [4, 4],
+        allowsEditing: true,
+        base64: true,
+      });
+
+      if (selectedPhoto.canceled) {
+        return;
+      }
+
+      if (!selectedPhoto.assets[0].uri) {
+        throw Error;
+      }
+
+      const photoInfo = await FileSystem.getInfoAsync(
+        selectedPhoto.assets[0].uri
+      );
+      if (photoInfo.size / 1024 / 1024 > 10) {
+        toast.show({
+          title:
+            "a imagem excede o limite de memória de 10mb permitido pelo servidor",
+        });
+        return;
+      }
+      setUserPhoto(selectedPhoto.assets[0].uri);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setPhotoIsLoading(false);
+    }
+  }
+
   return (
     <VStack flex={1}>
       <DefaultHeader text="Perfil" />
@@ -29,10 +75,7 @@ export function Profile() {
               endColor={"gray.700"}
             />
           ) : (
-            <UserPhoto
-              size={48}
-              source={{ uri: "https://github.com/BernardoSsilva.png" }}
-            />
+            <UserPhoto size={48} userPhotoUri={userPhoto} />
           )}
           <TouchableOpacity>
             <Text
@@ -41,6 +84,7 @@ export function Profile() {
               fontSize={"md"}
               mt={2}
               mb={8}
+              onPress={handleUserPhotoSelect}
             >
               Alterar foto
             </Text>
