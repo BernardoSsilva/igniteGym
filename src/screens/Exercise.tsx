@@ -12,7 +12,7 @@ export function Exercise() {
         flex={1}
         alignItems="center"
         justifyContent={"top"}
-        padding={0}
+        px={20}
       >
         <ExerciseImage
           imageUri={

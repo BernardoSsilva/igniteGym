@@ -8,6 +8,7 @@ type Props = ImageProps & {
 export function UserPhoto({ size, ...rest }: Props) {
   return (
     <Image
+      alt="user photo"
       w={size}
       h={size}
       borderRadius={"full"}

@@ -9,13 +9,20 @@ export function History() {
       title: "26.08.22",
 
       data: [
-        { title: "Costas", content: "puxada frontal", hour: "08:06" },
-        { title: "Biceps", content: "Remada unilateral", hour: "08:06" },
+        { key: 1, title: "Costas", content: "puxada frontal", hour: "08:06" },
+        {
+          key: 2,
+          title: "Biceps",
+          content: "Remada unilateral",
+          hour: "08:06",
+        },
       ],
     },
     {
       title: "27.08.22",
-      data: [{ title: "Costas", content: "Puxada frontal", hour: "08:06" }],
+      data: [
+        { key: 3, title: "Costas", content: "Puxada frontal", hour: "08:06" },
+      ],
     },
   ]);
   return (
@@ -23,7 +30,7 @@ export function History() {
       <DefaultHeader text="Histórico de Exercícios" />
       <SectionList
         sections={exercises}
-        keyExtractor={(item) => item}
+        keyExtractor={(item) => item.key.toString()}
         renderItem={({ item }) => (
           <HistoryCard
             title={item.title}
