@@ -15,7 +15,7 @@
         "android": {
           "image":"default"
         }
-      }
+      },
     "production": {
       "android":{
         "android": {
