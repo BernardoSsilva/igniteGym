@@ -12,15 +12,12 @@
       "distribution": "internal"
     },
     "android":{
-        "android": {
-          "image":"default"
-        }
+        "image":"default"
+        
       },
     "production": {
       "android":{
-        "android": {
           "image":"default"
-        }
       }
     }
   },
