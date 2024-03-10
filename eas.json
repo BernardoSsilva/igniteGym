@@ -7,7 +7,9 @@
       "developmentClient": true,
       "distribution": "internal"
     },
-    "image":"android",
+    "image":{
+      "android"
+    },
     "preview": {
       "distribution": "internal"
     },
