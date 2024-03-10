@@ -11,9 +11,16 @@
     "preview": {
       "distribution": "internal"
     },
+    "android":{
+        "android": {
+          "image":"default"
+        }
+      }
     "production": {
       "android":{
-        "buildType": "apk"
+        "android": {
+          "image":"default"
+        }
       }
     }
   },
